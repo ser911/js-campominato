@@ -1,5 +1,4 @@
 // 1-CREAZIONE ARRAY CON 16 NUMERI RANDOM
-var numbers;
 var randomNumbers = [];
 
 function randomInt(min, max){
@@ -7,7 +6,13 @@ function randomInt(min, max){
 }
 
 for (var i = 1; i <= 16; i++) {
-
+  var numbers;
   randomNumbers = randomInt(1,100);
-  console.log(randomNumbers);
+
+  if (numbers !== randomNumbers[i]) {
+  numbers += randomNumbers[i];
+
+  }
+
+  console.log(numbers);
 }
