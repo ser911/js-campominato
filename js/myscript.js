@@ -1,18 +1,42 @@
-// 1-CREAZIONE ARRAY CON 16 NUMERI RANDOM
 var randomNumbers = [];
-
+var numbers;
+var userScore = 0;
+var scoreMax = 84;
+// 1-CREAZIONE ARRAY CON 16 NUMERI RANDOM
+// FUNZIONE NUMERI RANDOM
 function randomInt(min, max){
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-for (var i = 1; i <= 16; i++) {
-  var numbers;
-  randomNumbers = randomInt(1,100);
+while ( randomNumbers.length < 16) {
 
-  if (numbers !== randomNumbers[i]) {
-  numbers += randomNumbers[i];
+  numbers = randomInt(1,100);
+
+  if (randomNumbers.includes(numbers) == false) {
+
+  randomNumbers.push(numbers);
 
   }
 
-  console.log(numbers);
+
 }
+console.log(randomNumbers);
+
+
+
+// INTERAZIONE UTENTE - SELEZIONE NUMERI DA 1 A 100
+
+var i = 1;
+while ( i <= scoreMax && randomNumbers.includes(userNumber) == false ){
+var userNumber = parseInt(prompt("Inserisci un numero da 1 a 100"));
+i++
+if (randomNumbers.includes(userNumber)) {
+  console.log("Boom! Hai perso!");
+  
+}
+else{
+  userScore += 1;
+}
+
+}
+console.log("Score = " + userScore);
